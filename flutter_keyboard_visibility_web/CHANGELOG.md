@@ -2,7 +2,9 @@
 
 * Replaced `dart:html` with `package:web` for WASM compatibility
 * Updated SDK constraint to `>=3.0.0` to support `package:web`
-* This change enables Flutter WASM builds to compile without errors
+* Fixed WASM dry run incompatibility: `dart:html unsupported` error
+* This change enables Flutter WASM builds to compile successfully
+* Resolves build warnings when targeting WebAssembly: "package:flutter_keyboard_visibility_web/flutter_keyboard_visibility_web.dart 1:1 - dart:html unsupported"
 
 ## [2.0.0] - March 4, 2021
 
