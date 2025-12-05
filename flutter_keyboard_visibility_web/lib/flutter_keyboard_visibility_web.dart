@@ -1,4 +1,4 @@
-import 'dart:html' as html show window, Navigator;
+import 'package:web/web.dart' as web;
 import 'package:flutter_keyboard_visibility_platform_interface/flutter_keyboard_visibility_platform_interface.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
@@ -7,13 +7,17 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 class FlutterKeyboardVisibilityPluginWeb
     extends FlutterKeyboardVisibilityPlatform {
   /// Constructs a [FlutterKeyboardVisibilityPluginWeb].
-  FlutterKeyboardVisibilityPluginWeb(html.Navigator navigator);
+  /// The navigator parameter is accepted for API compatibility but not used
+  /// since keyboard visibility detection is not implemented on web.
+  FlutterKeyboardVisibilityPluginWeb(web.Navigator navigator);
 
   /// Factory method that initializes the FlutterKeyboardVisibility plugin
   /// platform with an instance of the plugin for the web.
   static void registerWith(Registrar registrar) {
+    // Since keyboard visibility isn't implemented, the navigator value doesn't matter
+    // but we pass it for API compatibility
     FlutterKeyboardVisibilityPlatform.instance =
-        FlutterKeyboardVisibilityPluginWeb(html.window.navigator);
+        FlutterKeyboardVisibilityPluginWeb(web.window.navigator);
   }
 
   /// Emits changes to keyboard visibility from the platform. Web is not

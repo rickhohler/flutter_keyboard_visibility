@@ -1,3 +1,9 @@
+## [2.0.1] - December 5, 2025
+
+* Replaced `dart:html` with `package:web` for WASM compatibility
+* Updated SDK constraint to `>=3.0.0` to support `package:web`
+* This change enables Flutter WASM builds to compile without errors
+
 ## [2.0.0] - March 4, 2021
 
 * Migrated to null safety
